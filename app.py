@@ -33,7 +33,7 @@ if not df.empty:
     df["timestamp"] = pd.to_datetime(df["timestamp"])
     df["date"] = df["timestamp"].dt.date
 
-    # Date filter
+    # date filter
     unique_dates = sorted(df["date"].unique(), reverse=True)
     selected_date = st.selectbox("Select a date to view moods", unique_dates)
     df_filtered = df[df["date"] == selected_date]
